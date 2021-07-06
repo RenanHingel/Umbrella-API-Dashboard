@@ -51,10 +51,10 @@ pip3 install -r requirements.txt
 
 ## Setup:
 You can deploy this prototype in a lab environment, dCloud instance, or on your own deployment.
-You would then need to include the BASE64 encoding of your API Token and Key inside Controller.PY file, editing the variable "management_base64". To encode BASE64 you can use multiple tools, including https://www.base64decode.org/.
+
 
 #### Umbrella details:
-You need to have your Management API Key and Secret, and Organization ID_.
+You need to have your Management API Key, API Secret, and Organization ID.
 
 To generate an API KEY, refer to the documentation [here](https://docs.umbrella.com/umbrella-api/docs/authentication-and-errors).
 
@@ -77,7 +77,6 @@ flask run --host=0.0.0.0 --port=8080
 
 ### Running
 Launch your web browser and navigate to [localhost:5100](localhost:5100) or with your configured port.
-
 
 ### AD Connectors
 ![alt text](ad_connectors.PNG)
