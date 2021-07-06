@@ -61,7 +61,7 @@ To generate an API KEY, refer to the documentation [here](https://docs.umbrella.
 You must select an organization to manage and use its ORGANIZATION ID. You may do so
 [here](https://docs.umbrella.com/deployment-umbrella/docs/find-your-organization-id).
 
-Fill in the details of your Umbrella deployment in the [DETAILS.py](controller/DETAILS.py) file
+Fill in the details of your Umbrella deployment in the [DETAILS.py](controller/details.py) file
 ```python
 management_base64 = ''
 org_id= ''
