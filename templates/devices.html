@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Umbrella API Dashboard - All Devices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    /></head>
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div class="logo-src">
+				<img src="{{ url_for('static', filename='img/logo.png') }}"></img>
+				</div>
+                <div class="header__pane ml-auto">
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>    <div class="app-header__content">
+
+            </div>
+        </div>         <div class="app-main">
+                <div class="app-sidebar sidebar-shadow">
+                    <div class="app-header__logo">
+                        <div class="logo-src"></div>
+                        <div class="header__pane ml-auto">
+                            <div>
+                                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                                    <span class="hamburger-box">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-header__mobile-menu">
+                        <div>
+                            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-header__menu">
+                        <span>
+                            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                                <span class="btn-icon-wrapper">
+                                    <i class="fa fa-ellipsis-v fa-w-6"></i>
+                                </span>
+                            </button>
+                        </span>
+                    </div>    <div class="scrollbar-sidebar">
+                        <div class="app-sidebar__inner">
+                            <ul class="vertical-nav-menu">
+                                <li class="app-sidebar__heading">Devices</li>
+								
+                                 <li>
+                                    <a href="devices">
+                                      <img class="metismenu-icon pe-7s-graph2" src="{{ url_for('static', filename='img/all_devices.png') }}" width="30" height="30"></img>
+									  All Devices
+                                    </a>
+                                 </li>
+								 
+                                 <li>
+                                    <a href="virtual_appliances">
+                                      <img class="metismenu-icon pe-7s-graph2" src="{{ url_for('static', filename='img/virtual_appliances.png') }}" width="30" height="30"></img>
+									  Virtual Appliances
+                                    </a>
+                                 </li>
+								 
+                                 <li>
+                                    <a href="connectors">
+                                      <img class="metismenu-icon pe-7s-graph2" src="{{ url_for('static', filename='img/ad_connetor.png') }}" width="30" height="30"></img>
+									  AD Connectors
+                                    </a>
+                                 </li>
+								 
+                                 <li>
+                                    <a href="domain_controllers">
+                                      <img class="metismenu-icon pe-7s-graph2" src="{{ url_for('static', filename='img/domain_controllers.png') }}" width="30" height="30"></img>
+									  Domain Controllers
+                                    </a>
+                                 </li>
+								 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    <div class="app-main__outer">
+                    <div class="app-main__inner">
+                        <div class="app-page-title">
+                            <div class="page-title-wrapper">
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+                                        <img src="{{ url_for('static', filename='img/all_devices.png') }}" alt="All Devices" width="40" height="40"> 
+                                    </div>
+                                    <div>All Devices
+                                        <div class="page-title-subheading">The table below shows all Umbrella devices.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-header">Devices
+                                     <div class="btn-actions-pane-right">
+									   <div class="btn-group-sm btn-group">
+									     <input type="text" id="filter_input" onkeyup="filter_function()" placeholder="Search for hostname">
+									   </div>
+									 </div>
+									</div>
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="devices_table">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Hostname</th>
+                                                <th class="text-center">Health</th>
+                                                <th class="text-center">Type</th>
+                                                <th class="text-center">Host Type</th>
+                                                <th class="text-center">Last Updated</th>
+												<th class="text-center">Domains</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for x in result %}
+											<tr>
+											  <td>{{ x['element_name'] }}</td>
+											  <td>{{ x['element_health'] }}</td>
+											  <td>{{ x['element_type'] }}</td>
+											  <td>{{ x['host_type'] }}</td>
+											  <td>{{ x['last_updated'] }}</td>
+											  <td>{{ x['domains'] }}</td>
+											</tr>
+											{% endfor %}
+										  </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                 </div>
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script>
+	function filter_function() {
+	// Declare variables
+	var input, filter, table, tr, td, i, txtValue;
+	input = document.getElementById("filter_input");
+	filter = input.value.toUpperCase();
+	table = document.getElementById("devices_table");
+	tr = table.getElementsByTagName("tr");
+
+	// Loop through all table rows, and hide those who don't match the search query
+	for (i = 0; i < tr.length; i++) {
+	td = tr[i].getElementsByTagName("td")[0];
+	if (td) {
+	  txtValue = td.textContent || td.innerText;
+	  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		tr[i].style.display = "";
+	  } else {
+		tr[i].style.display = "none";
+	   }
+	  }
+	 }
+	}
+</script>
+</body>
+</html>
