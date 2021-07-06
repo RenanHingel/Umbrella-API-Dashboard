@@ -5,7 +5,7 @@ The initial scope of this Dashboard is to provide quick information such as when
 
 ## Contacts
 
-* Renan Hingel (renanhinge@gmail.com)
+* Renan Hingel (renanhingel@gmail.com)
 
 ## Solution Components
 * Cisco Umbrella API
