@@ -71,7 +71,7 @@ org_id= ''
 ### Python
 Launch the app.py server. Make sure that you have your venv activated.
 ```commandline
-flask run --host=0.0.0.0 --port=5100
+flask run --host=0.0.0.0 --port=8080
 ```
 
 ### Running
