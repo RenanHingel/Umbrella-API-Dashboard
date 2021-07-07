@@ -70,7 +70,7 @@ def get_devices(arg_type):
 
 	if arg_type == "ad":
 		for element in response_to_json:
-			# Only fetch results if this is a virtual appliance
+			# Only fetch results if this is an ad connector
 			if element['type'] == "connector":
 				resultDict = {}
 				resultDict["element_type"] = "Connector"
@@ -91,7 +91,7 @@ def get_devices(arg_type):
 
 	if arg_type == "dc":
 		for element in response_to_json:
-			# Only fetch results if this is a virtual appliance
+			# Only fetch results if this is a domain controller
 			if element['type'] == "domain_controller":
 				resultDict = {}
 				resultDict["element_type"] = "Domain Controller"
