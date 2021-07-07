@@ -3,6 +3,8 @@ This is the Umbrella API Dashboard source code. Using Umbrella API's, we can obt
 
 The initial scope of this Dashboard is to provide quick information such as when was a Virtual Appliance last synched with the Cisco Dashboard and what are the current Internal Domains for this element. This information is crucial to troubleshooting situations where new domains were added but they take some time to synch with all Virtual Appliances. 
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/RenanHingel/Umbrella-API-Dashboard)
+
 ## Contacts
 
 * Renan Hingel (renanhingel@gmail.com)
