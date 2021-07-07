@@ -61,10 +61,13 @@ To generate an API KEY, refer to the documentation [here](https://docs.umbrella.
 You must select an organization to manage and use its ORGANIZATION ID. You may do so
 [here](https://docs.umbrella.com/deployment-umbrella/docs/find-your-organization-id).
 
-Fill in the details of your Umbrella deployment in the [DETAILS.py](controller/details.py) file. Note the variable requires a BASE64 encoding https://www.base64encode.org. The encoding format must be token:secret. See the example below where I have encoded "api_token:api_secret" to BASE64 :
-```python
-management_base64 = 'Basic YXBpX3Rva2VuOmFwaV9zZWNyZXQ='
-org_id= ''
+Fill in the details of your Umbrella deployment in the [DETAILS.py](controller/details.py) file. 
+```
+################################################################
+org_id = "XXXXXX"
+api_key = "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+api_secret = "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
+################################################################
 ```
 
 ## Usage:
