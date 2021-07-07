@@ -36,7 +36,7 @@ pip install virtualenv
 ##### Create a new venv
 ```
 # Change to your project folder
-cd umbrella-scheduler
+cd umbrella-api-dashboard
 
 # Create the venv
 virtualenv venv
