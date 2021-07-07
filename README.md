@@ -98,6 +98,6 @@ For more resources on Umbrella API's and containers you may refer to the followi
 I'm developing this project to improve my Python + Flask skills, I am sure this can be improved a LOT if you have Python/Flask skills, feel free to improve upon this source code.
 
 ## License
-This source code is not currently under any license type, it will be submitted to Cisco DevNet.
+This source code is provided under Cisco Sample Code License, for details see [LICENSE](./license.txt)
 
 The web template design was provided by DashboardPack (https://dashboardpack.com). I did some minor adjustments to adapt their template to what I needed for this project.
