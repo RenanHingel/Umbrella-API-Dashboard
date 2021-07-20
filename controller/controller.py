@@ -2,6 +2,9 @@ import requests
 import json
 import base64
 from .details import *
+from datetime import datetime
+
+date_format = "%Y-%m-%dT%H:%M:%S.%fZ" 
 
 data = api_key+":"+api_secret
 urlSafeEncodedBytes = base64.urlsafe_b64encode(data.encode("utf-8"))
@@ -36,7 +39,8 @@ def get_devices(arg_type):
 			# If the element is an Umbrella Virtual Appliance, check the last domain synchronization time
 			if resultDict["element_type"] == "virtual_appliance":
 				resultDict["element_type"] = "Virtual Appliance"
-				resultDict["last_updated"] = element['settings']['lastSyncTime']
+				d = datetime.strptime(element['settings']['lastSyncTime'], date_format)
+				resultDict["last_updated"] = d
 			# Else, just check the last time the device was updated
 			else:
 					resultDict["last_updated"] = element['stateUpdatedAt']
@@ -58,7 +62,8 @@ def get_devices(arg_type):
 				resultDict["element_ip"] = element['settings']['internalIPs'][0]
 				domains = element['settings']['domains']
 				resultDict["domains"] = (', '.join(domains))
-				resultDict["last_updated"] = element['settings']['lastSyncTime']
+				d = datetime.strptime(element['settings']['lastSyncTime'], date_format)
+				resultDict["last_updated"] = d
 				try:
 					resultDict["host_type"] = element['settings']['hostType']
 				except:
@@ -70,7 +75,7 @@ def get_devices(arg_type):
 
 	if arg_type == "ad":
 		for element in response_to_json:
-			# Only fetch results if this is an ad connector
+			# Only fetch results if this is a virtual appliance
 			if element['type'] == "connector":
 				resultDict = {}
 				resultDict["element_type"] = "Connector"
@@ -79,7 +84,8 @@ def get_devices(arg_type):
 				resultDict["element_ip"] = element['settings']['internalIPs'][1]
 				domains = element['settings']['domains']
 				resultDict["domains"] = (', '.join(domains))
-				resultDict["last_updated"] = element['settings']['lastSyncTime']
+				d = datetime.strptime(element['settings']['lastSyncTime'], date_format)
+				resultDict["last_updated"] = d
 				try:
 					resultDict["host_type"] = element['settings']['hostType']
 				except:
@@ -91,7 +97,7 @@ def get_devices(arg_type):
 
 	if arg_type == "dc":
 		for element in response_to_json:
-			# Only fetch results if this is a domain controller
+			# Only fetch results if this is a virtual appliance
 			if element['type'] == "domain_controller":
 				resultDict = {}
 				resultDict["element_type"] = "Domain Controller"
